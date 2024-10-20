@@ -114,18 +114,25 @@ if app_page == 'Visualization':
 
     values = st.multiselect("Select two variables:",list_columns,["Reb", "Pts"])
 
+    st.write("The line chart below is useful for depicting a trend in relationships between game stats like points, rebounds, blocks, field goal percentage, minutes, +/-, and offensive rating from previous first games.")
+
     # Creation of the line chart
     st.line_chart(df,x=values[0],y=values[1])
 
+    st.write("The bar plot below helps visualize categorical data or comparisons between stats, making it easier to identify patterns, differences, or trends. It's ideal for showing discrete variables; in our case, Lebron's stats across different games.")
+    
     # Creation of the bar chart 
     st.bar_chart(df,x=values[0],y=values[1])
 
+    st.write("The pairplot below visualizes relationships between multiple numerical variables by plotting pairwise scatter plots and histograms. It helps identify correlations, trends, and distributions within the data, making it useful for exploring interactions between features.")
+    
     # Pairplot
     values_pairplot = st.multiselect("Select 4 variables:",list_columns,["Pts","Reb","Min","TO"])
 
     df2 = df[[values_pairplot[0],values_pairplot[1],values_pairplot[2],values_pairplot[3]]]
     pair = sns.pairplot(df2)
     st.pyplot(pair)
+    
 
 
 if app_page == 'Prediction':
