@@ -202,7 +202,7 @@ if app_page == 'Prediction':
     r2=metrics.r2_score(predictions,y_test)
 
     st.write("Mean Absolute Error:",mae)
-    st.write("R2 output:",r2)
+    st.write("R² output:",r2)
 
 if app_page == 'Data Insights':
 
