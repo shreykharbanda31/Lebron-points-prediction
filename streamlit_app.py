@@ -134,7 +134,6 @@ if app_page == 'Visualization':
     st.pyplot(pair)
     
 
-
 if app_page == 'Prediction':
 
     st.title("4. Prediction")
@@ -171,6 +170,8 @@ if app_page == 'Prediction':
 
     df2 = df[input_lr]
 
+    st.write("After visualizing his past performance, this section provides a Linear Regression model that is trained on LeBron's past games and helps predict his game points using his game stats. By establishing a relationship between variables like minutes played and shooting percentage, we can project outcomes like points scored. This model serves as a foundation for future enhancements, such as building more complex models to predict other aspects of performance or generate new insights.")
+
     # Step 1 splitting the dataset into X and y
     X= df2
     # target variable
@@ -202,6 +203,8 @@ if app_page == 'Prediction':
     st.write("R2 output:",r2)
 
 if app_page == 'Data Insights':
+
+    st.title("5. Data Insights")
 
     st.write("""
     - While on the surface, projecting a player's points based on stats that are only available at the same time as points seems relatively useless it can give potent insights into player scouting, play time, and game strategy. The purpose of sports analytics is to find out which numbers ultimately impact winning, and using those numbers to create a winning team. By creating an ML model that predicts Lebron’s points based on other stats from the present game a few things can be learned.
