@@ -196,6 +196,8 @@ if app_page == 'Prediction':
 
     #Stp6 Evaluation
 
+    st.write("The Mean Absolute Error (MAE) measures the average difference between predicted and actual values, indicating prediction accuracy. R² (R-squared) evaluates how well the model explains the variance in the target variable. Together, they assess both prediction error (MAE) and model performance (R²) for the linear regression model.")
+
     mae=metrics.mean_absolute_error(predictions,y_test)
     r2=metrics.r2_score(predictions,y_test)
 
