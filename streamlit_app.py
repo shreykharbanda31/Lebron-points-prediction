@@ -19,7 +19,7 @@ image_path = Image.open("nba-lebron-james-record-milliard-fortune-cigare.webp")
 
 st.image(image_path,width=400)
 
-app_page = st.sidebar.selectbox("Select Page",['Business Case','Data Exploration','Visualization','Prediction', 'Data Insights'])
+app_page = st.sidebar.selectbox("Select Page",['Business Case','Data Exploration','Visualization','Prediction', 'Conclusions and Data Insights'])
 
 df = pd.read_csv("lebron-game-log-dataset.csv")
 
@@ -204,9 +204,9 @@ if app_page == 'Prediction':
     st.write("Mean Absolute Error:",mae)
     st.write("R² output:",r2)
 
-if app_page == 'Data Insights':
+if app_page == 'Conclusions and Data Insights':
 
-    st.title("5. Data Insights")
+    st.title("5. Conclusions and Data Insights")
 
     st.write("""
     - While on the surface, projecting a player's points based on stats that are only available at the same time as points seems relatively useless it can give potent insights into player scouting, play time, and game strategy. The purpose of sports analytics is to find out which numbers ultimately impact winning, and using those numbers to create a winning team. By creating an ML model that predicts Lebron’s points based on other stats from the present game a few things can be learned.
