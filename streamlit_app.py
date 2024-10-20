@@ -36,7 +36,7 @@ if app_page == 'Business Case':
     st.write("""
             - How have LeBron’s key statistics (points, rebounds, assists, etc.) evolved over his career?
             - What patterns emerge in his game performance during each season?  
-            - 
+            - Can we establish relationships between variables like minutes played, shooting percentage, and points scored to create a model for theoretical projections of his future performance?
             """)
 
 if app_page == 'Data Exploration':
@@ -48,6 +48,52 @@ if app_page == 'Data Exploration':
     st.subheader("01 Description of the dataset")
 
     st.dataframe(df.describe())
+
+    st.write("The dataset used contains LeBron's game stats from his previous games of the past 3 seasons season (e.g., points, rebounds, assists, minutes played, etc.).")
+
+    if st.button("Show table key"):
+
+        st.write("""Date: The game’s date might capture trends like fatigue, rest days, or performance fluctuations over time (e.g., based on the phase of the season or back-to-back games).
+        
+        Opp (Opponent): The strength of the opponent's defense can significantly impact scoring. Historical performance against certain teams can also be factored in.
+        
+        Score: This indicates whether the game was a high- or low-scoring affair, which could relate to LeBron's contribution to the team's points.
+        
+        Type (Home/Away): Whether the game is played at home or away can influence performance due to factors like crowd support, travel fatigue, etc.
+        
+        Min (Minutes Played): More playing time typically correlates with higher points.
+        
+        FGM (Field Goals Made): Direct measure of successful shots, and thus directly correlates with points scored.
+        
+        FGA (Field Goals Attempted): Indicates shot volume, which gives insight into LeBron's involvement in the offense.
+        
+        FG% (Field Goal Percentage): Efficiency from the field. A higher FG% usually corresponds to higher points.
+        
+        3PM (3-Pointers Made): These shots are worth more points, so successful 3-point shots have a direct impact on the total.
+        
+        3PA (3-Point Attempts): Reflects how much LeBron is relying on 3-point shots. More attempts can lead to more points if his accuracy holds.
+        
+        3P% (3-Point Percentage): Efficiency from 3-point range can help explain scoring variance.
+        
+        FTM (Free Throws Made): Directly contributes to points scored.
+        
+        FTA (Free Throws Attempted): More attempts suggest more opportunities to score from the line, often due to fouls.
+        
+        FT% (Free Throw Percentage): Efficiency at the free-throw line. Higher FT% leads to more points from free throws.
+        
+        Rebounds (OR, DR, Reb): Rebounding (offensive and defensive) may not directly predict points but can indicate possession control and second-chance points (for offensive rebounds).
+        
+        Ast (Assists): While assists don't directly contribute to his points, they can indicate LeBron's involvement in the game’s offense, which might correlate with higher overall involvement and scoring.
+        
+        TO (Turnovers): High turnovers could indicate a game where LeBron struggled, potentially affecting his points.
+        
+        Stl (Steals), Blk (Blocks): Defensive stats that might reflect overall game activity, but their direct impact on points is less clear.
+        
+        PF (Personal Fouls): More fouls might lead to reduced playing time or aggressive play, affecting point production.
+        
+        +/- (Plus-Minus): Reflects the team's performance with LeBron on the court but may not be a strong predictor of his individual points.
+        
+        Pts (Points): This is the target variable you want to predict.""")
 
     st.subheader("02 Missing values")
 
@@ -166,3 +212,6 @@ if app_page == 'Prediction':
 
     st.write("Mean Absolute Error:",mae)
     st.write("R2 output:",r2)
+
+if app_page == 'Prediction':
+    
